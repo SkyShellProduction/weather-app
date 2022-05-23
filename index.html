@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <div class="mobile">
+        <div class="app">
+            <div class="app__navbar">
+                <div class="app__time">12:41</div>
+            </div>
+            <div class="app__content">
+                <p class="app__location">
+                    <img src="images/icons/location.svg" alt="">
+                    <span>Ташкент</span>
+                </p>
+                <div class="app__city-time">Понедельник 15:00 АМ</div>
+                <div class="app__forecast">
+                    <img src="images/icons/weather.svg" alt="">
+                    <span>Облачно</span>
+                </div>
+                <div class="app__temperature">10℃</div>
+                <div class="app__changes">
+                    <p class="app__changes-max">
+                        <img src="images/icons/arrowup.svg" alt="">
+                        <span>13°</span>
+                    </p>
+                    <p class="app__changes-min">
+                        <img src="images/icons/arrowdown.svg" alt="">
+                        <span>6°</span>
+                    </p>
+                </div>
+                <a href="#" class="app__add"><img src="images/icons/add.svg" alt=""></a>
+                <div class="app__dates">
+                    <div class="app__item">
+                        <div class="app__day">Сегодня</div>
+                        <img src="images/icons/weather.svg" alt="" class="app__weather-icon">
+                        <div class="app__temp">
+                            <p>10℃</p>
+                            <p>6℃</p>
+                        </div>
+                    </div>
+                    <div class="app__item">
+                        <div class="app__day">Сегодня</div>
+                        <img src="images/icons/weather.svg" alt="" class="app__weather-icon">
+                        <div class="app__temp">
+                            <p>10℃</p>
+                            <p>6℃</p>
+                        </div>
+                    </div>
+                    <div class="app__item">
+                        <div class="app__day">Сегодня</div>
+                        <img src="images/icons/weather.svg" alt="" class="app__weather-icon">
+                        <div class="app__temp">
+                            <p>10℃</p>
+                            <p>6℃</p>
+                        </div>
+                    </div>
+                    <div class="app__item">
+                        <div class="app__day">Сегодня</div>
+                        <img src="images/icons/weather.svg" alt="" class="app__weather-icon">
+                        <div class="app__temp">
+                            <p>10℃</p>
+                            <p>6℃</p>
+                        </div>
+                    </div>
+                    <div class="app__item">
+                        <div class="app__day">Сегодня</div>
+                        <img src="images/icons/weather.svg" alt="" class="app__weather-icon">
+                        <div class="app__temp">
+                            <p>10℃</p>
+                            <p>6℃</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="app__grid">
+                    <div class="app__grid-item app__wind-speed">
+                        <img src="images/icons/windspeed.svg" alt="">
+                        <div>
+                            <h3>7.0 км/ч</h3>
+                            <p>Скорость ветра</p>
+                        </div>
+                    </div>
+                    <div class="app__grid-item app__temperature-feel">
+                        <img src="images/icons/temperature.svg" alt="">
+                        <div>
+                            <h3>8.3°</h3>
+                            <p>Ощущается</p>
+                        </div>
+                    </div>
+                    <div class="app__grid-item app__humidity">
+                        <img src="images/icons/wet.svg" alt="">
+                        <div>
+                            <h3>39%</h3>
+                            <p>Влажность</p>
+                        </div>
+                    </div>
+                    <div class="app__grid-item app__visibility">
+                        <img src="images/icons/visibility.svg" alt="">
+                        <div>
+                            <h3>6 км</h3>
+                            <p>Видимость</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="app__flex">
+                    <div class="app__flex-item app__sunrise">
+                        <img src="images/icons/sunrise.svg" alt="">
+                        <p>Восход <span>07:04</span></p>
+                    </div>
+                    <div class="app__flex-item app__sunset">
+                        <img src="images/icons/sunset.svg" alt="">
+                        <p>Закат <span>17:24</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="app__search">
+                <form action="" class="app__form">
+                    <a href="#" class="app__back"><img src="images/icons/back.svg" alt=""></a>
+                    <input type="text" class="app__input" placeholder="Введите город/регион" required minlength="3">
+                    <button class="app__btn"><img src="images/icons/search.svg" alt=""></button>
+                </form>
+                <p class="undefined"></p>
+                <h3 class="app__favorite">Избранное</h3>
+                <ul class="app__list">
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>
