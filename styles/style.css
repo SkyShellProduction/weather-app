@@ -38,26 +38,60 @@ img {
     border-radius: 15px;
     padding: 10px 6px 30px;
     background: #000;
+    position: relative;
+    overflow: hidden;
 }
-
+.hello{
+    position: absolute;
+    background: #fff;
+    z-index: -10;
+    opacity: 0;
+    transition: .2s linear;
+    font-size: 40px;
+    top: 48px;
+    left: 6px;
+    right: 6px;
+    bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.hello.active{
+    z-index: 10;
+    opacity: 1;
+}
+.hello p{
+    font-size: 16px;
+}
 .app {
+    z-index: 5;
     min-height: 300px;
     height: 100%;
     max-height: 90vh;
     background: #fff;
     border-radius: inherit;
     overflow: auto;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
     position: relative;
     background-position: center;
     background-image: url(../images/backgrounds/sunny-night.png);
+    background-blend-mode: luminosity;
+    animation: weather 50s linear infinite alternate forwards;
+    transition: background .3s;
 }
-
+@keyframes weather {
+    0%{
+        background-position: 0% center;
+    }
+    100%{
+        background-position:  100% center;
+    }
+}
 .app::-webkit-scrollbar {
     width: 0;
 }
-
 .app__navbar {
     background: rgba(44, 43, 43, 0.835);
     padding: 12px 0 12px 30px;
@@ -68,7 +102,6 @@ img {
 
 .app__time {
     font-size: 12px;
-    color: #fff;
     font-weight: bold;
 }
 
@@ -255,6 +288,7 @@ img {
     font-size: 20px;
     text-align: center;
     margin: 15px 0;
+    color: #000;
     text-transform: uppercase;
 }
 .app__list-link{
@@ -271,4 +305,5 @@ img {
     font-size: 26px;
     text-transform: capitalize;
     margin: 15px 0;
+    color: #000;
 }

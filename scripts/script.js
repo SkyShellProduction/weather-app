@@ -1,4 +1,4 @@
-const APIKEY = '344dd127883825844588edb5e0addee3';
+const APIKEY = '';
 const host = 'https://api.openweathermap.org';
 const lat = 41.30108557176432;
 const long = 69.26905977506551;
@@ -31,6 +31,7 @@ const imgs = [
 ]
 const days = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
 const app = document.querySelector('.app'),
+    hello = document.querySelector('.hello'),
     appAdd = app.querySelector('.app__add'),
     appBack = app.querySelector('.app__back'),
     appSearch = app.querySelector('.app__search'),
@@ -103,6 +104,10 @@ function setWeather(res, weekly){
     let con = arr.concat(arr2);
     con.length = 5;
     appDates.innerHTML = '';
+    if(new Date().getHours() > 17) {
+        app.style.color = '#fff';
+        appAdd.style.backgroundColor = '#fff';
+    }
     con.forEach((item, i) => {
         let div = document.createElement('div');
         div.classList.add('app__item');
@@ -121,7 +126,10 @@ clock();
 async function fOPen(url) {
     let res = await fetch(url);
     if(res.ok) return res.json();
-    else throw new Error(`Cannot connect to ${url}`);
+    else {
+        alert('Oops something get wrong');
+        throw new Error(`Cannot connect to ${url}`);
+    }
 }
 let url = `${host}/data/2.5/weather?units=metric&lat=${lat}&lon=${long}&lang=ru&APPID=${APIKEY}`;
 let url2 = `${host}/data/2.5/forecast?lat=${lat}&lon=${long}&cnt=5&lang=ru&units=metric&appid=${APIKEY}`;
@@ -134,6 +142,7 @@ async function weatherData(link1, link2){
 }
 weatherData(url, url2).then(res => {
     setWeather(res.daily, res.weekly);
+    hello.classList.remove('active');
 });
 function chooseCity(btn){
     event.preventDefault();
@@ -143,8 +152,8 @@ function chooseCity(btn){
     let url2 = `${host}/data/2.5/forecast?lat=${lat}&lon=${lon}&cnt=5&lang=ru&units=metric&appid=${APIKEY}`;
     weatherData(url, url2).then(res => {
         setWeather(res.daily, res.weekly);
+        openClose(false);
     });
-    openClose(false);
 }
 function createFavorite(text, lat, lon){
     let li = document.createElement('li');
